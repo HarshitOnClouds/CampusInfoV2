@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import authService from "./appwrite/auth"
 import {login,logout} from './store/authSlice'
-import { SignupLogin } from "./components/index"
+import { SignupLogin, HomeLayout,Map } from "./components/index"
 
 
 function App() {
@@ -27,13 +27,15 @@ function App() {
   },[])
 
   if(loading){
-    return <div> Loading </div>
+    return <div className="bg-slate-950 flex justify-center items-center text-white min-h-screen"> Loading </div>
   }  else {
-    return 
-    <div>
-      loaded
-      <SignupLogin/>
-    </div>
+    return (
+      <div>
+        {/* <SignupLogin/> */}
+        {/* <HomeLayout/> */}
+        <Map/>
+      </div>
+      )
   }
 }
 
